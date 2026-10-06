@@ -1,0 +1,13 @@
+{
+  "imagenes": [
+    { "archivo": "taza.svg", "titulo": "Taza recién servida", "categoria": "barra" },
+    { "archivo": "granos.svg", "titulo": "Grano recién tostado", "categoria": "tueste" },
+    { "archivo": "bolsa.svg", "titulo": "Nuestras bolsas compostables", "categoria": "producto" },
+    { "archivo": "moka.svg", "titulo": "Cafetera moka clásica", "categoria": "producto" },
+    { "archivo": "latte.svg", "titulo": "Latte art en la barra", "categoria": "barra" },
+    { "archivo": "cafeto.svg", "titulo": "Cerezas de café maduras", "categoria": "origen" },
+    { "archivo": "tostadora.svg", "titulo": "Tostadora de tambor", "categoria": "tueste" },
+    { "archivo": "molinillo.svg", "titulo": "Molinillo manual", "categoria": "producto" },
+    { "archivo": "v60.svg", "titulo": "Método de goteo V60", "categoria": "barra" }
+  ]
+}

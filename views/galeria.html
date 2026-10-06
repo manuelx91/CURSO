@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de fotos de Grano Norte: el tostadero, la barra y nuestros cafés.">
+  <title>Galería · Grano Norte</title>
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== CABECERA ===== -->
+  <header class="cabecera" id="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="logo" href="../index.html">
+        <img src="../images/logo.svg" alt="" width="40" height="40">
+        Grano Norte
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="menu-boton" type="button" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+          <span class="solo-lector">Abrir menú</span>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="galeria.html" class="activo" aria-current="page">Galería</a></li>
+          <li><a href="presupuesto.html">Presupuesto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cabecera de la página -->
+    <section class="cabecera-pagina" aria-labelledby="titulo-galeria">
+      <div class="contenedor">
+        <span class="etiqueta">Galería</span>
+        <h1 id="titulo-galeria">Un vistazo al tostadero</h1>
+        <p>Filtra por categoría y pulsa en cualquier imagen para verla en grande. Puedes moverte con las flechas del teclado y cerrar con Esc.</p>
+      </div>
+    </section>
+
+    <!-- Galería dinámica generada con JavaScript -->
+    <section class="seccion" aria-labelledby="titulo-fotos">
+      <div class="contenedor">
+        <h2 id="titulo-fotos" class="solo-lector">Fotografías</h2>
+        <div class="filtros" id="filtros" role="group" aria-label="Filtrar imágenes por categoría">
+          <button class="filtro" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button class="filtro" type="button" data-filtro="tueste" aria-pressed="false">Tueste</button>
+          <button class="filtro" type="button" data-filtro="barra" aria-pressed="false">Barra</button>
+          <button class="filtro" type="button" data-filtro="producto" aria-pressed="false">Producto</button>
+          <button class="filtro" type="button" data-filtro="origen" aria-pressed="false">Origen</button>
+        </div>
+        <div class="galeria" id="galeria" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Visor de imágenes (lightbox) con el elemento nativo <dialog> -->
+    <dialog class="visor" id="visor" aria-label="Visor de imágenes">
+      <button class="visor__cerrar" type="button" id="visor-cerrar" aria-label="Cerrar visor">&times;</button>
+      <figure class="visor__figura">
+        <img id="visor-imagen" src="../images/galeria/taza.svg" alt="" width="800" height="600">
+        <button class="visor__control visor__control--anterior" type="button" id="visor-anterior" aria-label="Imagen anterior">&#8249;</button>
+        <button class="visor__control visor__control--siguiente" type="button" id="visor-siguiente" aria-label="Imagen siguiente">&#8250;</button>
+        <figcaption id="visor-texto"></figcaption>
+      </figure>
+    </dialog>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <h2>Grano Norte</h2>
+          <p>Tostadores de café de especialidad. Tueste semanal y envío a toda la península.</p>
+        </div>
+        <div>
+          <h2>Dónde estamos</h2>
+          <address>
+            Calle de Ponzano, 42<br>
+            28003 Madrid<br>
+            <a href="tel:+34910000000">910 000 000</a><br>
+            <a href="mailto:hola@granonorte.example">hola@granonorte.example</a>
+          </address>
+        </div>
+        <div>
+          <h2>Síguenos</h2>
+          <ul class="redes">
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="../images/iconos/instagram.svg" alt="Instagram" width="22" height="22"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="../images/iconos/facebook.svg" alt="Facebook" width="22" height="22"></a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noopener"><img src="../images/iconos/x.svg" alt="X (Twitter)" width="22" height="22"></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="../images/iconos/youtube.svg" alt="YouTube" width="22" height="22"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <p>&copy; <span class="anio-actual">2026</span> Grano Norte S.L. Todos los derechos reservados.</p>
+        <p><a href="aviso-legal.html">Aviso legal</a> · <a href="aviso-legal.html#privacidad">Política de privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/galeria.js"></script>
+</body>
+</html>

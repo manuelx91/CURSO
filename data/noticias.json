@@ -1,0 +1,32 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "fecha": "2026-09-28",
+      "titulo": "Llega la cosecha 2026 de Huila, Colombia",
+      "resumen": "Un lavado con notas de panela, naranja y cacao. Lo tostamos en perfil medio para que brille tanto en espresso como en filtro.",
+      "categoria": "Novedades"
+    },
+    {
+      "id": 2,
+      "fecha": "2026-09-15",
+      "titulo": "Nuevo taller: espresso en casa",
+      "resumen": "Dos horas para aprender a ajustar molienda, dosis y tiempo de extracción con tu propia cafetera. Plazas limitadas a ocho personas.",
+      "categoria": "Talleres"
+    },
+    {
+      "id": 3,
+      "fecha": "2026-09-02",
+      "titulo": "Envases 100 % compostables",
+      "resumen": "Desde este mes todas nuestras bolsas son compostables y mantienen la válvula de desgasificación para conservar el aroma.",
+      "categoria": "Sostenibilidad"
+    },
+    {
+      "id": 4,
+      "fecha": "2026-08-20",
+      "titulo": "Abrimos la barra de cata los sábados",
+      "resumen": "Pásate por el tostadero entre las 10:00 y las 14:00 y prueba gratis los cafés de temporada preparados en tres métodos distintos.",
+      "categoria": "Tostadero"
+    }
+  ]
+}

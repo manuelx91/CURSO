@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcula al momento el presupuesto de tu pack de café y equipo de Grano Norte.">
+  <title>Presupuesto · Grano Norte</title>
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== CABECERA ===== -->
+  <header class="cabecera" id="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="logo" href="../index.html">
+        <img src="../images/logo.svg" alt="" width="40" height="40">
+        Grano Norte
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="menu-boton" type="button" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+          <span class="solo-lector">Abrir menú</span>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="presupuesto.html" class="activo" aria-current="page">Presupuesto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cabecera-pagina" aria-labelledby="titulo-presupuesto">
+      <div class="contenedor">
+        <span class="etiqueta">Presupuesto</span>
+        <h1 id="titulo-presupuesto">Configura tu pack</h1>
+        <p>Rellena tus datos, elige producto, plazo de entrega y extras. El precio se actualiza al instante.</p>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="titulo-formulario">
+      <div class="contenedor">
+        <h2 id="titulo-formulario" class="solo-lector">Formulario de solicitud</h2>
+
+        <!-- novalidate: la validación la hace JavaScript (js/presupuesto.js) -->
+        <form class="formulario" id="form-presupuesto" action="#" method="post" novalidate>
+
+          <!-- ===== PARTE 1: Datos de contacto ===== -->
+          <fieldset>
+            <legend>1. Datos de contacto</legend>
+            <div class="campos">
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" maxlength="15" autocomplete="given-name" placeholder="Escribe aquí tu nombre" required aria-describedby="error-nombre">
+                <p class="campo__error" id="error-nombre" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" maxlength="40" autocomplete="family-name" placeholder="Escribe aquí tus apellidos" required aria-describedby="error-apellidos">
+                <p class="campo__error" id="error-apellidos" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="telefono">Teléfono de contacto</label>
+                <input type="tel" id="telefono" name="telefono" maxlength="9" inputmode="numeric" autocomplete="tel-national" placeholder="600000000" required aria-describedby="error-telefono">
+                <p class="campo__error" id="error-telefono" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="nombre@dominio.com" required aria-describedby="error-email">
+                <p class="campo__error" id="error-email" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ===== PARTE 2: Presupuesto ===== -->
+          <fieldset>
+            <legend>2. Presupuesto</legend>
+            <div class="campos">
+              <!-- Producto: cada opción lleva su precio en data-precio -->
+              <div class="campo">
+                <label for="producto">Elige un producto</label>
+                <select id="producto" name="producto" required aria-describedby="error-producto">
+                  <option value="" data-precio="0">Selecciona una opción</option>
+                  <option value="degustacion" data-precio="35">Pack degustación, 3 orígenes (35 €)</option>
+                  <option value="filtro" data-precio="79">Kit filtro V60 + 500 g (79 €)</option>
+                  <option value="moka" data-precio="99">Kit moka + 1 kg de café (99 €)</option>
+                  <option value="cafeteria" data-precio="189">Pack cafetería, 5 kg (189 €)</option>
+                  <option value="espresso" data-precio="349">Kit espresso doméstico (349 €)</option>
+                </select>
+                <p class="campo__error" id="error-producto" aria-live="polite"></p>
+              </div>
+
+              <!-- Plazo: input numérico; a más días, más descuento -->
+              <div class="campo">
+                <label for="plazo">Plazo de entrega (días)</label>
+                <input type="number" id="plazo" name="plazo" min="1" max="90" step="1" value="3" required aria-describedby="ayuda-plazo error-plazo">
+                <p class="campo__ayuda" id="ayuda-plazo">7 a 14 días: 5 % de descuento · 15 a 29 días: 10 % · 30 días o más: 15 %</p>
+                <p class="campo__error" id="error-plazo" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <!-- Extras: cada casilla suma su importe -->
+            <fieldset class="campo">
+              <legend>Elige los extras para tu producto</legend>
+              <div class="extras">
+                <label class="opcion"><input type="checkbox" name="extras" value="molienda" data-precio="5"> Molienda a medida (+5 €)</label>
+                <label class="opcion"><input type="checkbox" name="extras" value="grabado" data-precio="15"> Grabado personalizado (+15 €)</label>
+                <label class="opcion"><input type="checkbox" name="extras" value="regalo" data-precio="4"> Envoltorio de regalo (+4 €)</label>
+                <label class="opcion"><input type="checkbox" name="extras" value="taller" data-precio="25"> Taller de cata online (+25 €)</label>
+                <label class="opcion"><input type="checkbox" name="extras" value="express" data-precio="9"> Envío express 24 h (+9 €)</label>
+              </div>
+            </fieldset>
+
+            <!-- Resumen y presupuesto final (se actualiza sin botones) -->
+            <div class="resumen">
+              <dl>
+                <dt>Producto</dt><dd id="resumen-producto">0,00 €</dd>
+                <dt>Extras</dt><dd id="resumen-extras">0,00 €</dd>
+                <dt>Descuento por plazo</dt><dd id="resumen-descuento">0 %</dd>
+              </dl>
+              <div class="resumen__total">
+                <label for="total">Presupuesto estimado</label>
+                <output id="total" name="total" for="producto plazo">0,00 €</output>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ===== PARTE 3: Condiciones y envío ===== -->
+          <fieldset>
+            <legend>3. Aceptación de condiciones y envío</legend>
+            <div class="condiciones">
+              <input type="checkbox" id="condiciones" name="condiciones" required aria-describedby="error-condiciones">
+              <label for="condiciones">He leído y acepto la <a href="aviso-legal.html#privacidad" target="_blank">política de privacidad</a>.</label>
+            </div>
+            <p class="campo__error" id="error-condiciones" aria-live="polite"></p>
+
+            <div class="acciones">
+              <button class="boton" type="submit">Enviar presupuesto</button>
+              <button class="boton boton--secundario" type="reset">Borrar formulario</button>
+            </div>
+          </fieldset>
+
+          <p class="mensaje" id="mensaje-form" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <h2>Grano Norte</h2>
+          <p>Tostadores de café de especialidad. Tueste semanal y envío a toda la península.</p>
+        </div>
+        <div>
+          <h2>Dónde estamos</h2>
+          <address>
+            Calle de Ponzano, 42<br>
+            28003 Madrid<br>
+            <a href="tel:+34910000000">910 000 000</a><br>
+            <a href="mailto:hola@granonorte.example">hola@granonorte.example</a>
+          </address>
+        </div>
+        <div>
+          <h2>Síguenos</h2>
+          <ul class="redes">
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="../images/iconos/instagram.svg" alt="Instagram" width="22" height="22"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="../images/iconos/facebook.svg" alt="Facebook" width="22" height="22"></a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noopener"><img src="../images/iconos/x.svg" alt="X (Twitter)" width="22" height="22"></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="../images/iconos/youtube.svg" alt="YouTube" width="22" height="22"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <p>&copy; <span class="anio-actual">2026</span> Grano Norte S.L. Todos los derechos reservados.</p>
+        <p><a href="aviso-legal.html">Aviso legal</a> · <a href="aviso-legal.html#privacidad">Política de privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/presupuesto.js"></script>
+</body>
+</html>

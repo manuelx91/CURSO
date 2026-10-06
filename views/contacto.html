@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto y ubicación del tostadero Grano Norte en Madrid. Calcula la ruta hasta nosotros.">
+  <title>Contacto · Grano Norte</title>
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <!-- Librerías de mapas: Leaflet + Leaflet Routing Machine (OpenStreetMap / OSRM) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== CABECERA ===== -->
+  <header class="cabecera" id="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="logo" href="../index.html">
+        <img src="../images/logo.svg" alt="" width="40" height="40">
+        Grano Norte
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="menu-boton" type="button" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+          <span class="solo-lector">Abrir menú</span>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="presupuesto.html">Presupuesto</a></li>
+          <li><a href="contacto.html" class="activo" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cabecera-pagina" aria-labelledby="titulo-contacto">
+      <div class="contenedor">
+        <span class="etiqueta">Contacto</span>
+        <h1 id="titulo-contacto">Ven a vernos al tostadero</h1>
+        <p>Usa tu ubicación, escribe tu dirección o pulsa en el mapa para calcular la ruta hasta nosotros.</p>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="titulo-ubicacion">
+      <div class="contenedor contacto">
+
+        <!-- Datos de contacto y ubicación -->
+        <div class="datos-contacto">
+          <h2 id="titulo-ubicacion">Grano Norte</h2>
+          <dl>
+            <dt>Dirección</dt>
+            <dd><address>Calle de Ponzano, 42<br>28003 Madrid</address></dd>
+            <dt>Teléfono</dt>
+            <dd><a href="tel:+34910000000">910 000 000</a></dd>
+            <dt>Correo electrónico</dt>
+            <dd><a href="mailto:hola@granonorte.example">hola@granonorte.example</a></dd>
+            <dt>Horario</dt>
+            <dd>Lunes a viernes: 8:00 a 19:00<br>Sábados: 10:00 a 14:00</dd>
+            <dt>Cómo llegar</dt>
+            <dd>Metro Ríos Rosas (L1) o Alonso Cano (L7)</dd>
+          </dl>
+        </div>
+
+        <!-- Mapa dinámico con cálculo de ruta -->
+        <div>
+          <form class="ruta-form" id="ruta-form">
+            <label class="solo-lector" for="ruta-origen">Tu dirección</label>
+            <input type="text" id="ruta-origen" name="origen" placeholder="Ej.: Puerta del Sol, Madrid">
+            <button class="boton" type="submit">Calcular ruta</button>
+            <button class="boton boton--secundario" type="button" id="ruta-ubicacion">Usar mi ubicación</button>
+          </form>
+          <div class="mapa" id="mapa" role="application" aria-label="Mapa con la ubicación de Grano Norte"></div>
+          <p class="ruta-info" id="ruta-info" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <h2>Grano Norte</h2>
+          <p>Tostadores de café de especialidad. Tueste semanal y envío a toda la península.</p>
+        </div>
+        <div>
+          <h2>Dónde estamos</h2>
+          <address>
+            Calle de Ponzano, 42<br>
+            28003 Madrid<br>
+            <a href="tel:+34910000000">910 000 000</a><br>
+            <a href="mailto:hola@granonorte.example">hola@granonorte.example</a>
+          </address>
+        </div>
+        <div>
+          <h2>Síguenos</h2>
+          <ul class="redes">
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="../images/iconos/instagram.svg" alt="Instagram" width="22" height="22"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="../images/iconos/facebook.svg" alt="Facebook" width="22" height="22"></a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noopener"><img src="../images/iconos/x.svg" alt="X (Twitter)" width="22" height="22"></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="../images/iconos/youtube.svg" alt="YouTube" width="22" height="22"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <p>&copy; <span class="anio-actual">2026</span> Grano Norte S.L. Todos los derechos reservados.</p>
+        <p><a href="aviso-legal.html">Aviso legal</a> · <a href="aviso-legal.html#privacidad">Política de privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/contacto.js"></script>
+</body>
+</html>

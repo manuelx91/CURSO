@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grano Norte, tostadores de café de especialidad en Madrid. Café recién tostado, talleres y barra de cata.">
+  <title>Grano Norte · Tostadores de café de especialidad</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <!-- Hoja de estilos propia -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== CABECERA: logotipo + barra de navegación fija ===== -->
+  <header class="cabecera" id="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="" width="40" height="40">
+        Grano Norte
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="menu-boton" type="button" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+          <span class="solo-lector">Abrir menú</span>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+          <li><a href="views/galeria.html">Galería</a></li>
+          <li><a href="views/presupuesto.html">Presupuesto</a></li>
+          <li><a href="views/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== SECCIÓN 1: Portada ===== -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="contenedor">
+        <span class="etiqueta">Tostado en Madrid desde 2014</span>
+        <h1 id="titulo-hero">Café de especialidad, tostado cada semana</h1>
+        <p>Seleccionamos granos de pequeños productores, los tostamos en lotes cortos y te los enviamos en menos de 72 horas desde el tueste.</p>
+        <div class="hero__acciones">
+          <a class="boton" href="views/presupuesto.html">Pide tu presupuesto</a>
+          <a class="boton boton--secundario" href="#noticias">Últimas noticias</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 2: Quiénes somos ===== -->
+    <section class="seccion" aria-labelledby="titulo-nosotros">
+      <div class="contenedor">
+        <div class="seccion__intro">
+          <span class="etiqueta">Quiénes somos</span>
+          <h2 id="titulo-nosotros">Un tostadero pequeño con manías grandes</h2>
+          <p>Somos un equipo de cinco personas obsesionadas con sacar lo mejor de cada grano. Trabajamos con comercio directo y tostamos para que el café sepa a su origen, no al tueste.</p>
+        </div>
+        <div class="rejilla">
+          <article class="ventaja">
+            <div class="ventaja__icono" aria-hidden="true">1</div>
+            <h3>Origen trazable</h3>
+            <p>Sabemos qué finca, qué variedad y qué proceso hay detrás de cada bolsa.</p>
+          </article>
+          <article class="ventaja">
+            <div class="ventaja__icono" aria-hidden="true">2</div>
+            <h3>Tueste semanal</h3>
+            <p>Tostamos los lunes y enviamos de martes a jueves. Nunca café viejo.</p>
+          </article>
+          <article class="ventaja">
+            <div class="ventaja__icono" aria-hidden="true">3</div>
+            <h3>Envases compostables</h3>
+            <p>Bolsas con válvula que conservan el aroma y no generan residuos plásticos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 3: Cafés destacados ===== -->
+    <section class="seccion seccion--crema" aria-labelledby="titulo-cafes">
+      <div class="contenedor">
+        <div class="seccion__intro">
+          <span class="etiqueta">Cafés de temporada</span>
+          <h2 id="titulo-cafes">Lo que estamos tostando ahora</h2>
+        </div>
+        <div class="rejilla">
+          <article class="tarjeta">
+            <img src="images/galeria/granos.svg" alt="Granos de café tostado" width="800" height="600">
+            <div class="tarjeta__cuerpo">
+              <h3>Huila, Colombia</h3>
+              <p>Panela, naranja y cacao. Ideal para espresso.</p>
+              <p class="tarjeta__precio">14,50 € / 250 g</p>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <img src="images/galeria/cafeto.svg" alt="Rama de cafeto con cerezas maduras" width="800" height="600">
+            <div class="tarjeta__cuerpo">
+              <h3>Yirgacheffe, Etiopía</h3>
+              <p>Floral, bergamota y melocotón. Perfecto para filtro.</p>
+              <p class="tarjeta__precio">16,00 € / 250 g</p>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <img src="images/galeria/bolsa.svg" alt="Bolsa de café Grano Norte" width="800" height="600">
+            <div class="tarjeta__cuerpo">
+              <h3>Mezcla de la casa</h3>
+              <p>Brasil y Guatemala. Chocolate con leche y avellana.</p>
+              <p class="tarjeta__precio">11,90 € / 250 g</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 4: Noticias (cargadas por AJAX desde data/noticias.json) ===== -->
+    <section class="seccion" id="noticias" aria-labelledby="titulo-noticias">
+      <div class="contenedor">
+        <div class="seccion__intro">
+          <span class="etiqueta">Actualidad</span>
+          <h2 id="titulo-noticias">Noticias del tostadero</h2>
+        </div>
+        <!-- Contenedor que se rellena con JavaScript -->
+        <div class="rejilla" id="lista-noticias" aria-live="polite">
+          <p class="estado-carga">Cargando noticias…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 5: Proceso ===== -->
+    <section class="seccion seccion--crema" aria-labelledby="titulo-proceso">
+      <div class="contenedor">
+        <div class="seccion__intro">
+          <span class="etiqueta">Cómo trabajamos</span>
+          <h2 id="titulo-proceso">De la finca a tu taza</h2>
+        </div>
+        <ol class="pasos rejilla">
+          <li><h3>Selección</h3><p>Catamos muestras de cada cosecha y elegimos solo lotes por encima de 85 puntos.</p></li>
+          <li><h3>Tueste</h3><p>Diseñamos un perfil de tueste para cada origen en nuestra tostadora de tambor.</p></li>
+          <li><h3>Reposo</h3><p>Dejamos desgasificar el café 48 horas antes de envasarlo.</p></li>
+          <li><h3>Envío</h3><p>Lo recibes en casa, con fecha de tueste en la bolsa.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 6: Llamada a la acción ===== -->
+    <section class="seccion" aria-labelledby="titulo-cta">
+      <div class="contenedor">
+        <div class="cta">
+          <h2 id="titulo-cta">¿Montas una cafetería o quieres equipar tu casa?</h2>
+          <p>Calcula al momento el precio de tu pack con nuestro configurador.</p>
+          <a class="boton" href="views/presupuesto.html">Calcular presupuesto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <h2>Grano Norte</h2>
+          <p>Tostadores de café de especialidad. Tueste semanal y envío a toda la península.</p>
+        </div>
+        <div>
+          <h2>Dónde estamos</h2>
+          <address>
+            Calle de Ponzano, 42<br>
+            28003 Madrid<br>
+            <a href="tel:+34910000000">910 000 000</a><br>
+            <a href="mailto:hola@granonorte.example">hola@granonorte.example</a>
+          </address>
+        </div>
+        <div>
+          <h2>Síguenos</h2>
+          <ul class="redes">
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="images/iconos/instagram.svg" alt="Instagram" width="22" height="22"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="images/iconos/facebook.svg" alt="Facebook" width="22" height="22"></a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noopener"><img src="images/iconos/x.svg" alt="X (Twitter)" width="22" height="22"></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="images/iconos/youtube.svg" alt="YouTube" width="22" height="22"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <p>&copy; <span class="anio-actual">2026</span> Grano Norte S.L. Todos los derechos reservados.</p>
+        <p><a href="views/aviso-legal.html">Aviso legal</a> · <a href="views/aviso-legal.html#privacidad">Política de privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: comunes + carga de noticias -->
+  <script src="js/main.js"></script>
+  <script src="js/noticias.js"></script>
+</body>
+</html>
