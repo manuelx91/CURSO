@@ -50,4 +50,4 @@ La página de contacto necesita conexión a internet para cargar el mapa (Leafle
 ## Enlaces
 
 - **Repositorio:** https://github.com/manuelx91/CURSO
-- **Sitio web (GitHub Pages):** https://manuelx91.github.io/CURSO/
+- **URL prevista de GitHub Pages (pendiente de habilitar Pages):** https://manuelx91.github.io/CURSO/
